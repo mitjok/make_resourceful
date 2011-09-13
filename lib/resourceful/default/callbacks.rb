@@ -37,7 +37,7 @@ module Resourceful
       def scope(block)
         lambda do
           instance_eval(&(block || lambda {}))
-        end
+        end.call
       end
 
       private
